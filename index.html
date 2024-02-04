@@ -357,74 +357,42 @@
             align-items: center;
         }
 
-        < !-- HTML !--><button class="button-86" role="button">Button 86</button>
-
         /* CSS */
-        .button-86 {
-            all: unset;
-            width: 100px;
-            height: 30px;
+        .button-89 {
+            --b: 3px;
+            /* border thickness */
+            --s: 0.45em;
+            /* size of the corner */
+            --color: #f2e9d0;
+
+            padding: calc(0.5em + var(--s)) calc(0.9em + var(--s));
+            color: var(--color);
+            --_p: var(--s);
+            background: conic-gradient(from 90deg at var(--b) var(--b),
+                    #0000 90deg,
+                    var(--color) 0) var(--_p) var(--_p) / calc(100% - var(--b) - 2 * var(--_p)) calc(100% - var(--b) - 2 * var(--_p));
+            transition: 0.3s linear, color 0s, background-color 0s;
+            outline: var(--b) solid #0000;
+            outline-offset: 0.6em;
             font-size: 16px;
-            background: transparent;
-            border: none;
-            position: relative;
-            color: #f0f0f0;
-            cursor: pointer;
-            z-index: 1;
-            padding: 10px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            white-space: nowrap;
+
+            border: 0;
+
             user-select: none;
             -webkit-user-select: none;
             touch-action: manipulation;
         }
 
-        .button-86::after,
-        .button-86::before {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            z-index: -99999;
-            transition: all 0.4s;
+        .button-89:hover,
+        .button-89:focus-visible {
+            --_p: 0px;
+            outline-color: var(--color);
+            outline-offset: 0.05em;
         }
 
-        .button-86::before {
-            transform: translate(0%, 0%);
-            width: 100%;
-            height: 100%;
-            background: #28282d;
-            border-radius: 10px;
-        }
-
-        .button-86::after {
-            transform: translate(10px, 10px);
-            width: 35px;
-            height: 35px;
-            background: #ffffff15;
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(5px);
-            border-radius: 50px;
-        }
-
-        .button-86:hover::before {
-            transform: translate(5%, 20%);
-            width: 110%;
-            height: 110%;
-        }
-
-        .button-86:hover::after {
-            border-radius: 10px;
-            transform: translate(0, 0);
-            width: 100%;
-            height: 100%;
-        }
-
-        .button-86:active::after {
-            transition: 0s;
-            transform: translate(0, 5%);
+        .button-89:active {
+            background: var(--color);
+            color: #fff;
         }
 
         #twitter-main,
@@ -525,8 +493,9 @@
             }
 
             .newsman {
-                top: 0px;
+                top: 50%;
                 right: 0;
+                transform: translate(0%, -50%);
                 max-width: 37%;
             }
         }
@@ -579,7 +548,9 @@
             }
 
             .newsman {
-                bottom: 0;
+                top: 50%;
+                right: 0;
+                transform: translate(0%, -50%);
                 max-width: 45%;
             }
         }
@@ -591,8 +562,9 @@
             }
 
             .newsman {
-                right: -14%;
-                bottom: 0;
+                top: 50%;
+                right: 0;
+                transform: translate(0%, -50%);
                 max-width: 50%;
             }
         }
@@ -755,7 +727,10 @@
             }
 
             .newsman {
-                bottom: 0;
+                top: 50%;
+                right: 0;
+                transform: translate(0%, -50%);
+
                 max-width: 50%;
             }
 
@@ -1479,28 +1454,27 @@
                             <div id="w-node-e1ff7b0a-59ed-6146-fc17-ec3c1c7fab55-da28ee20" class="div-block-2 ff"
                                 style="z-index: 1000">
                                 <a href="https://gitbook.com" target="_blank"
-                                    class="link-block w-inline-block button-86"><img src="images/gitbook2.png"
-                                        style="height: 80px; width: 90px" loading="lazy" hr alt
-                                        class="image-18 icon hv1" /><img src="images/gitbook2.png"
-                                        style="height: 80px; width: 90px" loading="lazy" hr alt
-                                        class="image-18 icon" /></a>
-                                <a href="https://twitter.com/DynastarCapitalxyz" target="_blank" id="twitter-main-link"
-                                    class="link-block-2 w-inline-block button-86"><img src="images/twitter2.png"
-                                        id="twitter-main" loading="lazy" height width="26.5" hr alt
-                                        class="image-18 twitt hv2" /><img id="twitter-main-2" src="images/twitter2.png"
-                                        loading="lazy" height width="26.5" hr alt class="image-18 twitt" /><img
-                                        class="back-to-top" src="images/twitter2.png" width="45" height="45" alt
-                                        style="opacity: 0" data-w-id="b4321624-ebc3-a611-eaae-09d281f18b63" id="capital"
-                                        loading="lazy" /></a><a href="https://medium.com/dynastar-capital"
-                                    target="_blank" class="link-block-3 w-inline-block button-86"><img
-                                        src="images/medium2.png" loading="lazy" height width="26.5" alt
-                                        class="image-18 eye hv3" /><img src="images/medium2.png" loading="lazy" height
-                                        width="26.5" alt class="image-18 eye" /></a><a
-                                    href="https://t.me/dynastarcapitaltg" target="_blank"
-                                    class="link-block-4 w-inline-block button-86"><img src="images/telegram2.png"
-                                        loading="lazy" height width="26.5" alt class="image-18 telegram hv4" /><img
-                                        src="images/telegram2.png" loading="lazy" height width="26.5" alt
-                                        class="image-18 telegram" /></a>
+                                    class="link-block w-inline-block  social-links button-89"
+                                    style="height: 80px; width: 90px;">
+                                    <img src="/images/gitbook2.png" loading="lazy" id="gitbook-img-id" />
+                                </a>
+                                <a href="https://twitter.com/DynastarCapitalxyz" target="_blank"
+                                    class="link-block w-inline-block social-links button-89"
+                                    style="height: 80px; width: 90px;">
+                                    <img src="/images/twitter2.png" loading="lazy" id="twitter-img-id" />
+                                </a>
+                                <a href="https://medium.com/dynastar-capital" target="_blank"
+                                    class="link-block w-inline-block  social-links button-89"
+                                    style="height: 80px; width: 90px;">
+                                    <img src="/images/medium2.png" loading="lazy" id="medium-img-id" />
+                                </a>
+                                <a href="https://t.me/dynastarcapitaltg" target="_blank"
+                                    class="link-block w-inline-block  social-links button-89"
+                                    style="height: 80px; width: 90px;">
+                                    <img src="/images/telegram2.png" loading="lazy" id="telegram-img-id" />
+                                </a>
+
+
                             </div>
                         </div>
                     </div>

@@ -2954,15 +2954,30 @@ html {
   .submit-button:hover {
     background-color: #bcac83;
   }
-  
+  .social-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .social-links img{
+    max-height: fit-content;
+    max-width: 100%;
+  }
+  #twitter-img-id{    
+    width: 40px;
+  }
+  #gitbook-img-id{
+    width: 60px;
+  }
   .newsman {
     width: 100%;
     max-width: 25%;
     position: absolute;
-    top: auto;
+    top: 50%;
+    transform: scale(1) translate(0%, -50%);
     bottom: 0%;
     left: auto;
-    right: 0%;
+    right: 8%;
   }
   
   .footer {
