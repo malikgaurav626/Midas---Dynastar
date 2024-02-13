@@ -6,6 +6,16 @@
 <head>
     <meta charset="utf-8" />
     <title>Dynastar Capital</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+    <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/android-chrome-512x512.png">
+    <link rel="shortcut icon" href="/images/favicon.ico">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="Webflow" name="generator" />
     <link rel="icon" href="images/logo.png  " type="image/x-icon" />
@@ -42,6 +52,62 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
     <style>
+        @import "https://unpkg.com/open-props";
+
+        .button-trial {
+            font-family: var(--font-sans);
+            font-weight: var(--font-weight-6);
+            font-size: var(--font-size-4);
+            color: #f4e9cd;
+            background: transparent;
+            mix-blend-mode: difference;
+            margin-left: 40px;
+            border: 1px solid #f4e9cd;
+            padding: var(--size-3) var(--size-6);
+            transform: translateY(calc(var(--y, 0) * 1%)) scale(var(--scale));
+            transition: transform 0.3s;
+            position: relative;
+        }
+
+        .button-trial:hover {
+            --y: -10;
+            --scale: 1.1;
+            --border-scale: 1;
+
+        }
+
+        .button-trial:active {
+            --y: 5%;
+            --scale: 0.9;
+            --border-scale: 0.9, 0.8;
+        }
+
+        .button-trial:before {
+            content: "";
+            position: absolute;
+            inset: calc(var(--size-3) * -1);
+            border: var(--size-2) solid #f4e9cd;
+            transform: scale(var(--border-scale, 0));
+            transition: transform 0.2s;
+
+            --angle-one: 105deg;
+            --angle-two: 290deg;
+            --spread-one: 30deg;
+            --spread-two: 40deg;
+            --start-one: calc(var(--angle-one) - (var(--spread-one) * 0.5));
+            --start-two: calc(var(--angle-two) - (var(--spread-two) * 0.5));
+            --end-one: calc(var(--angle-one) + (var(--spread-one) * 0.5));
+            --end-two: calc(var(--angle-two) + (var(--spread-two) * 0.5));
+
+            mask: conic-gradient(transparent 0 var(--start-one),
+                    #f4e9cd var(--start-one) var(--end-one),
+                    transparent var(--end-one) var(--start-two),
+                    #f4e9cd var(--start-two) var(--end-two),
+                    transparent var(--end-two));
+
+            z-index: -1;
+        }
+
         .w-dropdown-list {
             border-radius: 4px;
             color: #bcac83;
@@ -865,6 +931,10 @@
             .future-section.section {
                 display: flex;
             }
+
+            .button-trial {
+                font-size: var(--font-size-3);
+            }
         }
 
         @media (max-width: 735px) {
@@ -881,6 +951,10 @@
 
             #section5 .ftmain .bottom_footer {
                 margin-top: 50px;
+            }
+
+            .button-trial {
+                font-size: var(--font-size-2);
             }
         }
 
@@ -901,7 +975,7 @@
             }
 
             .top_title.mobvrs.w-embed h2 {
-                width: 100%;
+                width: 87vw;
             }
 
             .man2 {
@@ -1071,6 +1145,9 @@
                     <div class="description">
                         Craft Bespoke Money Markets for Optimized Capital Efficiency
                         Across Any Asset Group
+                        <br>
+                        <button class="button-trial" style="margin-top: 30px;" onclick="routeToApp()">Launch
+                            App</button>
                     </div>
                     <img src="images/63980509a30d98fa92d2cd15-63bffc187842c582529d806a_man.png" loading="lazy" alt
                         class="man2" />
@@ -1751,6 +1828,10 @@
         successMessageDiv.className = "success-message";
         successMessageDiv.textContent =
             "Thank you! Your submission has been received!";
+
+        function routeToApp() {
+            window.location.href = "app/app.html";
+        }
     </script>
 </body>
 

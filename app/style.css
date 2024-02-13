@@ -75,6 +75,7 @@ html, body{
 }
 
 .twobuttons{
+    margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
