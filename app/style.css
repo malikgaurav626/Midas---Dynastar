@@ -255,7 +255,6 @@ i{
 
 .icons{
     padding: 0rem 2rem;
-    width: 12%;
 }
 .icons-box{
     cursor: pointer;     
@@ -270,7 +269,7 @@ i{
 }
 .icons-box div{
     background-color: transparent;
-    padding: 16px;
+    padding: 10px;
     overflow: hidden;
     
     /* border-left: 2px solid #bcac83; */
